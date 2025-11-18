@@ -1,5 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter, withComponentInputBinding } from '@angular/router';
+import { provideRouter, withComponentInputBinding, withRouterConfig } from '@angular/router';
 
 import { AppComponent } from './app/app.component';
 import { NoTaskComponent } from './app/tasks/no-task/no-task.component';
@@ -30,7 +30,9 @@ bootstrapApplication(AppComponent, {
                 ]
             },
         ],
-    withComponentInputBinding()),
+    withComponentInputBinding(), withRouterConfig({
+        paramsInheritanceStrategy: 'always',
+    })),
     ], // Route = path + information associated with the path you wish Angular to load when the path is presented.
 }).catch((err) => 
     console.error(err));
