@@ -5,6 +5,8 @@ import { AppComponent } from './app/app.component';
 import { NoTaskComponent } from './app/tasks/no-task/no-task.component';
 import { TaskComponent } from './app/tasks/task/task.component';
 import { UserTasksComponent } from './app/users/user-tasks/user-tasks.component';
+import { TasksComponent } from './app/tasks/tasks.component';
+import { NewTaskComponent } from './app/tasks/new-task/new-task.component';
 
 bootstrapApplication(AppComponent, {
     providers: [
@@ -16,6 +18,16 @@ bootstrapApplication(AppComponent, {
             {
                 path: 'users/:userId', // <your-domain>/users/<uid>
                 component: UserTasksComponent,
+                children: [
+                    {
+                        path: 'tasks', // <your-domain>/users/<uid>/tasks
+                        component: TasksComponent,
+                    },
+                    {
+                        path: 'tasks/new',
+                        component: NewTaskComponent,
+                    }
+                ]
             },
         ],
     withComponentInputBinding()),
