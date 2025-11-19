@@ -18,6 +18,11 @@ export const routes: Routes = [
                 component: UserTasksComponent,
                 children: [
                     {
+                        path: '',
+                        redirectTo: 'tasks', // To cover incorrectly formated urls.
+                        pathMatch: 'prefix', // Checks the URL matches the route pathway.
+                    }
+                    {
                         path: 'tasks', // <your-domain>/users/<uid>/tasks
                         component: TasksComponent,
                     },
