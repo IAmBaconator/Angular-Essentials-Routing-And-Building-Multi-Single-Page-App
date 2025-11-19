@@ -16,6 +16,9 @@ export const routes: Routes = [
                 path: 'users/:userId', // <your-domain>/users/<uid>
                 component: UserTasksComponent,
                 children: userRoutes,
+                data: {
+                    message: 'Hello!' // Option allowing you to setup any static value that is passed as a property to the associated component IF you have withComponentInputBinding() enabled.
+                }
             },
             {
                 path: '**',

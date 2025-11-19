@@ -11,6 +11,7 @@ import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 })
 export class UserTasksComponent implements OnInit {
   userName = '';
+  message = input.required<string>(); // This comes from the app.routes.ts.
   // userId = input.required<string>();
   private usersService = inject(UsersService);
   private activatedRoute = inject(ActivatedRoute);
@@ -22,6 +23,7 @@ export class UserTasksComponent implements OnInit {
 
   // Alternative way of getting the route param value.
   ngOnInit(): void {
+    console.log('Input Data: ' + this.message());
     console.log(this.activatedRoute); // Good to use if you're only needing a quick view of a component that isn't being reused.
     const subscription = this.activatedRoute.paramMap.subscribe({
       next: (paramMap) => {
