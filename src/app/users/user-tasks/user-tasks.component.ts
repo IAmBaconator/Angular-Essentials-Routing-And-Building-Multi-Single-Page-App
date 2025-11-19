@@ -1,6 +1,6 @@
 import { Component, inject, input, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
-import { ActivatedRoute, ActivatedRouteSnapshot, ResolveFn, RouterLink, RouterOutlet, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, ResolveFn, RouterLink, RouterOutlet, RouterState, RouterStateSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-user-tasks',
@@ -57,4 +57,11 @@ export const resolveUserName: ResolveFn<string> = ( // <> > is required here to 
     const userName = usersService.users.find((u) => u.id === activatedRoute.paramMap.get('userId'))
         ?.name || '';
     return userName;
+}
+
+export const resolveTitle: ResolveFn<string> = (
+  activatedRoute,
+  routerState
+) => {
+  return resolveUserName(activatedRoute, routerState) + '\'s Tasks'
 }

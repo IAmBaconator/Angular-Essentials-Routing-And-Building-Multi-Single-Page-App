@@ -11,6 +11,7 @@ export const routes: Routes = [
             {
                 path: '', // <your-domain>/
                 component: NoTaskComponent,
+                title: '', // To show up in browser title and searched results.
             },
             {
                 path: 'users/:userId', // <your-domain>/users/<uid>
