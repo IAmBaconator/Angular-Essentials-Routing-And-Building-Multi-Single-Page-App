@@ -10,7 +10,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot, ResolveFn, RouterLink, RouterOu
   styleUrl: './user-tasks.component.css',
 })
 
-export class UserTasksComponent implements OnInit {
+export class UserTasksComponent {
   userName = input.required<string>(); // Now is set from the app.routes.ts.
   message = input.required<string>(); // This comes from the app.routes.ts.
   // private activatedRoute = inject(ActivatedRoute);
