@@ -22,7 +22,7 @@ export class UserTasksComponent implements OnInit {
 
   // Alternative way of getting the route param value.
   ngOnInit(): void {
-    console.log(this.activatedRoute.snapshot); // Good to use if you're only needing a quick view of a component that isn't being reused.
+    console.log(this.activatedRoute); // Good to use if you're only needing a quick view of a component that isn't being reused.
     const subscription = this.activatedRoute.paramMap.subscribe({
       next: (paramMap) => {
         this.userName = this.usersService.users.find((u) => u.id === paramMap.get('userId'))
