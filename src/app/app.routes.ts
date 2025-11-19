@@ -2,7 +2,7 @@
 // Using this style appears to break the routing system by pulling it from main.ts
 import { Routes } from "@angular/router";
 
-import { routes as userRoutes } from "./users/user/users.routes";
+import { routes as userRoutes } from "./users/users.routes";
 import { NoTaskComponent } from "./tasks/no-task/no-task.component";
 import { resolveUserName, UserTasksComponent } from "./users/user-tasks/user-tasks.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
