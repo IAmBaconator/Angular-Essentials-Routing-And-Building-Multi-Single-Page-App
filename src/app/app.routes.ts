@@ -20,8 +20,8 @@ export const routes: Routes = [
                     message: 'Hello!' // Option allowing you to setup any static value that is passed as a property to the associated component IF you have withComponentInputBinding() enabled.
                 },
                 resolve: {
-                    userName: resolveUserName // No need to add () to execute resolveUserName because Angular does this for you.
-                } // Works like the data parameter but deals with dynamic values.
+                    userName: resolveUserName, // No need to add () to execute resolveUserName because Angular does this for you.
+                }, // Works like the data parameter but deals with dynamic values.
             },
             {
                 path: '**',
